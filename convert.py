@@ -5,8 +5,8 @@ import cc_dat_utils
 # cc_dat = cc_dat_utils.make_cc_data_from_dat("data/pfgd_test.dat")
 # print(cc_dat)
 #print the resulting data
-cc_dat = cc_dat_utils.make_cc_data_from_dat("data/pfgd_test.dat")
-print(cc_dat)
+#cc_dat = cc_dat_utils.make_cc_data_from_dat("data/pfgd_test.dat")
+#print(cc_dat)
 
 
 #Part 2 Example
@@ -22,9 +22,12 @@ example_json_file = "data/example_json.json"
 input_json_file = "data/test_data.json"
 
 ### Begin Add Code Here ###
-with open ("data/test_data.json")
-# Here's where I need to "Use the json module to load the data from the file" -RA
-make_game_library_from_json(json_data)
+import test_json_utils
+def make_game_library_from_json(json_data):
+    new_game_library = test_json_utils.game_library()
+
+    return new_game_library
+print (new_game_library)
 
 #Open the file specified by input_json_file
 #Use the json module to load the data from the file

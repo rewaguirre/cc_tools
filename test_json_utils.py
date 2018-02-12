@@ -2,6 +2,8 @@ import sys
 import json
 import test_data
 input_json_file = "data/test_data.json"
+with open("data/test_data.json", 'r') as reader:
+    json_data = json.load(reader)
 
 #Creates and returns a GameLibrary object(defined in test_data) from loaded json_data
 def make_game_library_from_json(test_data):
