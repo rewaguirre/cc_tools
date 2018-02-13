@@ -9,7 +9,8 @@ with open("data/test_data.json", 'r') as reader:
 def make_game_library_from_json(test_data):
     #Initialize a new GameLibrary
     game_library = test_data.GameLibrary()
-    print("hi")
+    for game in json_data:
+            print(json_data[game])
     #Loop through the json_data
         #Create a new Game object from the json_data by reading
         #  title
