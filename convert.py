@@ -28,7 +28,7 @@ import test_json_utils
  #   new_game_library = test_json_utils.game_library()
  #   return new_game_library
 
-game_library = test_json_utils.make_game_library_from_json(test_data)
+game_library = test_json_utils.make_game_library_from_json('json_data')
 print (game_library)
 #Open the file specified by input_json_file
 #Use the json module to load the data from the file

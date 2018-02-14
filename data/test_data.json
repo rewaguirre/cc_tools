@@ -1,26 +1,28 @@
 {
-	"Game 1": {
-		"Platform": {
-			"Launch Year": "1989",
-			"Name": "Atari TitLynx"
-			},
-		"Title": "Chip's Challenge",
-		"Year": "1989"
-		},
-	"Game 2": {
-		"Platform": {
-			"Launch Year": "2003",
-			"Name": "Steam"
-			},
-		"Title": "Chip's Challenge 2",
-		"Year": "2015"
-		},
-	"Game 3": {
-		"Platform": {
-			"Launch Year": "2003",
-			"Name": "Steam"
-			},
-		"Title": "Doki Doki Literature Club!",
-		"Year": "2017"
-		}
+ "Games":[
+   {
+     "Platform":{
+       "Launch Year":"1989",
+       "Name":"Atari Lynx"
+     },
+     "Title":"Chip's Challenge",
+     "Year":"1989"
+   },
+   {
+     "Platform":{
+       "Launch Year":"2003",
+       "Name":"Steam"
+     },
+     "Title":"Chip's Challenge 2",
+     "Year":"2015"
+   },
+   {
+     "Platform":{
+       "Launch Year":"2003",
+       "Name":"Steam"
+     },
+     "Title":"Doki Doki Literature Club!",
+     "Year":"2017"
+   }
+ ]
 }
