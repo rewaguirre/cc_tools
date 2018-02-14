@@ -11,11 +11,10 @@ def make_game_library_from_json(json_data):
     game_library = test_data.GameLibrary()
     for game_data in json_data["Games"]:
         game = test_data.Game()
-        for platform_data in game_data["Platform"]:
-            platform = test_data.Platform()
-            platform.name = platform_data["Name"]
-            platform.launch_year = platform_data["Launch Year"]
-        game.name = game_data["Title"]
+        game.platform = test_data.Platform()
+        game.platform.name = game_data["Platform"]["Name"]
+        game.platform.launch_year = game_data["Platform"]["Launch Year"]
+        game.title = game_data["Title"]
         game.year = game_data["Year"]
         game_library.add_game(game)
 
