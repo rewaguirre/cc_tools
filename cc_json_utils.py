@@ -4,6 +4,7 @@ import cc_data
 def make_cc_data_file_from_json(json_data):
     cc_data_file = cc_data.CCDataFile()
 
+    # this handles required fields
     for json_level in json_data:
         cc_level = cc_data.CCLevel()
         cc_level.level_number = json_level["level_number"]
@@ -12,7 +13,7 @@ def make_cc_data_file_from_json(json_data):
         cc_level.upper_layer = json_level["upper_layer"]
         cc_level.lower_layer = json_level["lower_layer"]
 
-        #still need to handle optional fields
+        #These handle optional fields
         json_fields = json_level ["optional_fields"]
         for json_field in json_fields:
             field_type = json_field["type"]
@@ -22,11 +23,22 @@ def make_cc_data_file_from_json(json_data):
                 cc_level.add_field(cc_title_field)
             elif (field_type == "hint"):
                 hint = json_field["hint"]
-                CCMapHintField = cc_data.CCMapHintField(hint)
-                cc_level.add_field(CCMapHintField)
+                cc_Map_Hint_Field = cc_data.CCMapHintField(hint)
+                cc_level.add_field(cc_Map_Hint_Field)
+            elif (field_type == "encoded password"):
+                password = json_field["encoded password"]
+                cc_Encoded_Password_Field = cc_data.CCEncodedPasswordField(password)
+                cc_level.add_field(cc_Encoded_Password_Field)
+            elif (field_type == "monsters"):
+                monsters = json_field["monsters"]
+                cc_Monster_Movement_Field = cc_data.CCMonsterMovementField(monsters)
+                cc_level.add_field(cc_Monster_Movement_Field)
+
             else:
                 print ("I don't know what that was")
         #now I need to do the above for all the rest of the optional fields
+
+
 
         cc_data_file.add_level(cc_level)
     return cc_data_file
