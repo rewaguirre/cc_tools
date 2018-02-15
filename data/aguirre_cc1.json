@@ -1,0 +1,19 @@
+[
+  {"level_number":-1,
+   "time":100,
+   "num_chips":3,
+    "upper_layer":[0, 0],
+    "lower_layer":[0, 0],
+    "optional_fields":[
+      {
+        "type":"title",
+        "title":"Rich's level"
+      },
+      {
+        "type":"hint",
+        "hint":"Do the thing!"
+      }
+
+]
+  }
+]
