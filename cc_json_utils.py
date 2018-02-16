@@ -30,14 +30,16 @@ def make_cc_data_file_from_json(json_data):
                 cc_Encoded_Password_Field = cc_data.CCEncodedPasswordField(password)
                 cc_level.add_field(cc_Encoded_Password_Field)
             elif (field_type == "monsters"):
-                monsters = json_field["monsters"]
+                json_monster_list = json_field["monsters"]
+                monsters = []
+                for monster in json_monster_list:
+                    monster = cc_data.CCCoordinate(monster[0],monster[1])
+                    monsters.append(monster)
                 cc_Monster_Movement_Field = cc_data.CCMonsterMovementField(monsters)
                 cc_level.add_field(cc_Monster_Movement_Field)
 
             else:
                 print ("I don't know what that was")
-        #now I need to do the above for all the rest of the optional fields
-
 
 
         cc_data_file.add_level(cc_level)
