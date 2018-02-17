@@ -44,18 +44,19 @@ import test_json_utils
 
 
 #Part 3
+#Load your custom JSON file
+#Convert JSON data to cc_data
+#Save converted data to DAT file
+
 with open("data/aguirre_cc1.json", "r") as reader:
     json_cc_data = json.load(reader)
 
 #This turns a JSON file into cc data
 cc_data_file = cc_json_utils.make_cc_data_file_from_json(json_cc_data)
 
-#print command for testing
-#print(cc_data_file)
+#This print command is just for testing
+# print(cc_data_file)
 
 #This writes a DAT file from the input cc data
 cc_dat_utils.write_cc_data_to_dat(cc_data_file, "data/reaguirr_cc1.dat")
 
-#Load your custom JSON file
-#Convert JSON data to cc_data
-#Save converted data to DAT file
