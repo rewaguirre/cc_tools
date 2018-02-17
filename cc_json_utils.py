@@ -14,7 +14,7 @@ def make_cc_data_file_from_json(json_data):
         cc_level.lower_layer = json_level["lower_layer"]
 
         #These handle optional fields
-        json_fields = json_level ["optional_fields"]
+        json_fields = json_level["optional_fields"]
         for json_field in json_fields:
             field_type = json_field["type"]
             #Handles title field
@@ -37,7 +37,12 @@ def make_cc_data_file_from_json(json_data):
                 json_monster_list = json_field["monsters"]
                 monsters = []
                 for monster in json_monster_list:
-                    monster = cc_data.CCCoordinate(monster[0], monster[1])
+                    #Added this line to read monsters when I changed them to dictionaries in JSON
+                    x = monster["x"]
+                    y = monster["y"]
+                    monster = cc_data.CCCoordinate(x,y)
+                    #This line was for when monsters were lists, not dictionaries
+                    # monster = cc_data.CCCoordinate(monster[0], monster[1])
                     monsters.append(monster)
                 cc_Monster_Movement_Field = cc_data.CCMonsterMovementField(monsters)
                 cc_level.add_field(cc_Monster_Movement_Field)
